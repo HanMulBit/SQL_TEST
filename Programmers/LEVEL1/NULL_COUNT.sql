@@ -1,0 +1,4 @@
+--NULL의 개수를 출력하는 쿼리문을 작성하여라
+
+SELECT COUNT(*) - COUNT(AGE) AS USERS
+FROM USER_INFO
