@@ -1,0 +1,9 @@
+-- 두 테이블에서 자동차 종류가 세단인 자동차 중 10월에 대여를 시작한 자동차 ID 리스트 출력
+-- 중복 x, 자동차 id 기준 내림차순 정렬
+SELECT DISTINCT C.CAR_ID
+FROM CAR_RENTAL_COMPANY_CAR C
+JOIN CAR_RENTAL_COMPANY_RENTAL_HISTORY H
+    ON C.CAR_ID = H.CAR_ID
+WHERE C.CAR_TYPE = '세단'
+    AND EXTRACT(MONTH FROM H.START_DATE) = 10
+ORDER BY C.CAR_ID DESC;
